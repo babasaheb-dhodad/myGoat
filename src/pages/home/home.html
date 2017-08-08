@@ -3,16 +3,79 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>New Goat</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <form [formGroup]="goat" (ngSubmit)="addGoat()"> 
+  <ion-list>
+      <ion-item>
+        <ion-label floating>Tag No</ion-label>
+        <ion-input formControlName="tagNo" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Breed</ion-label>
+        <ion-select formControlName="breed">
+        <ion-option value="1">Sirohi</ion-option>
+        <ion-option value="2">Osmanabadi</ion-option>
+        <ion-option value="3">Boer</ion-option>
+        <ion-option value="4">Beetal</ion-option>
+        <ion-option value="5">Sojat</ion-option>
+        <ion-option value="6">Jamunapari</ion-option>
+        </ion-select>
+    </ion-item>
+     <ion-item>
+        <ion-label floating>Birth Date</ion-label>
+        <ion-datetime displayFormat="MMM DD YYYY" pickerFormat="MMM DD YYYY" formControlName="birthDate"></ion-datetime>  
+     </ion-item>
+    <ion-item>
+        <ion-label floating>Birth Weight</ion-label>
+        <ion-input formControlName="birthWeight" type="text"></ion-input>
+    </ion-item>   
+    <ion-item>
+        <ion-label floating>Female Tag No</ion-label>
+        <ion-input formControlName="femaleTagNo" type="number"></ion-input>
+    </ion-item>    
+    <ion-item>
+        <ion-label floating>Female Breed</ion-label>
+        <ion-select formControlName="femaleBreed">
+        <ion-option value="1">Sirohi</ion-option>
+        <ion-option value="2">Osmanabadi</ion-option>
+        <ion-option value="3">Boer</ion-option>
+        <ion-option value="4">Beetal</ion-option>
+        <ion-option value="5">Sojat</ion-option>
+        <ion-option value="6">Jamunapari</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Horns</ion-label>
+        <ion-select formControlName="horn">
+        <ion-option value="0">No</ion-option>
+        <ion-option value="1">Yes</ion-option>        
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Male Tag No</ion-label>
+        <ion-input formControlName="maleTagNo" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Male Breed</ion-label>
+        <ion-select formControlName="maleBreed">
+        <ion-option value="1">Sirohi</ion-option>
+        <ion-option value="2">Osmanabadi</ion-option>
+        <ion-option value="3">Boer</ion-option>
+        <ion-option value="4">Beetal</ion-option>
+        <ion-option value="5">Sojat</ion-option>
+        <ion-option value="6">Jamunapari</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Color</ion-label>
+        <ion-input formControlName="color" type="text"></ion-input>
+    </ion-item>
+     <button ion-button full type="submit">Submit</button>
+     <button ion-button full color="light" type="reset">Clear</button>
+</ion-list>
+</form>
 </ion-content>
